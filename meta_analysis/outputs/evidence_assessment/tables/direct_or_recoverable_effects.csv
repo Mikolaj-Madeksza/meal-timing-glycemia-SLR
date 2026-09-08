@@ -1,0 +1,8 @@
+"study_effect","study_id","population_id","construct","outcome","later_minus_earlier","se","ci_low","ci_high","unit","precision_source"
+"Bandin 2015","Bandin_2015","Bandin_2015_all","same meal occasion: lunch","glucose AUC above baseline, 150 min",32.6,7.587,15.437,49.763,"mmol/L×h (as printed)","derived from exact paired p=0.002"
+"Bo 2015","Bo_2015","Bo_2015_all","daypart: morning versus evening","glucose AUC, 180 min",1800.1,389.8286,1036,2564.1,"mg/dL×h (as printed)","reported adjusted contrast and 95% CI; sign reversed"
+"Gu 2020","Gu_2020","Gu_2020_all","same meal occasion: dinner, extended window","glucose total AUC, 240 min",88.8,9.4389,70.3,107.3,"mg/dL×h","reported adjusted contrast and 95% CI"
+"Stutz 2024: early chronotype","Stutz_2024","Stutz_2024_early","daypart: morning versus evening","CGM glucose iAUC, 120 min",40,19.133,2,77,"mmol/L×min","reported multilevel-model contrast and 95% CI"
+"Stutz 2024: late chronotype","Stutz_2024","Stutz_2024_late","daypart: morning versus evening","CGM glucose iAUC, 120 min",-4,26.276,-55,48,"mmol/L×min","reported multilevel-model contrast and 95% CI"
+"Lopez-Minguez 2018: total sample","Lopez_Minguez_2018","Lopez_Minguez_2018_all","relative to sleep: early versus late mixed dinner","glucose total AUC, 120 min",15.13,4.9456,5.1266,25.1334,"mmol/L×h (as printed)","derived from exact paired p=0.004"
+"Enomoto 2026: Day 2","Enomoto_2026","Enomoto_2026_all","relative to sleep: dinner 1 h versus 5 h before bedtime","CGM dinner glucose iAUC, 180 min",598.84615,738.3293,-1009.8352,2207.5275,"mg/dL×min","author-provided paired SD, SE, and 95% CI received 2026-08-31"

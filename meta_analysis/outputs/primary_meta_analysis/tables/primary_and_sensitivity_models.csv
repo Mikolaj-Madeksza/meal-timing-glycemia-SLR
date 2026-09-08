@@ -1,0 +1,9 @@
+"analysis","model","k","estimate","ci_low","ci_high","Q","Q_df","Q_p","tau2","I2_percent","enomoto_day","nakamura_p_assumed"
+"Primary analysis: Enomoto Day 2 + Nakamura","REML random effects",2,80.9101,0.0162,161.804,2.9299,1,0.087,2290.6244,65.8686,2,0.001
+"Primary analysis: Enomoto Day 2 + Nakamura","Common effect",2,92.3775,48.991,135.7641,2.9299,1,0.087,0,65.8686,2,0.001
+"Primary analysis: Enomoto Day 2 + Nakamura","REML with HKSJ interval",2,80.9101,-443.5152,605.3354,2.9299,1,0.087,2290.6244,65.8686,2,0.001
+"Enomoto Day 1 sensitivity","REML random effects",2,105.6947,64.4529,146.9366,0.4842,1,0.4865,0,0,1,0.001
+"Enomoto Day 3 sensitivity","REML random effects",2,26.3668,-153.7093,206.4429,17.1657,1,0,15904.104,94.1744,3,0.001
+"Enomoto Day 4 sensitivity","REML random effects",2,64.4067,-52.0981,180.9116,4.4583,1,0.0347,5573.1118,77.57,4,0.001
+"Nakamura P-threshold sensitivity: P = 0.0005","REML random effects",2,81.605,0.9189,162.2911,3.0803,1,0.0792,2348.5789,67.5351,2,5e-04
+"Nakamura P-threshold sensitivity: P = 0.0001","REML random effects",2,82.7277,2.4273,163.0281,3.3588,1,0.0668,2442.2071,70.2275,2,1e-04

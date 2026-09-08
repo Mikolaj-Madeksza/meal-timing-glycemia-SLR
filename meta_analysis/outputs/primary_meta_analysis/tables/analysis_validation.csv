@@ -1,0 +1,7 @@
+"analysis","optimized_REML_tau2","closed_form_REML_tau2","absolute_difference","status"
+"Primary analysis: Enomoto Day 2 + Nakamura",2290.6244,2290.6243,0,"PASS"
+"Enomoto Day 1 sensitivity",0,0,0,"PASS"
+"Enomoto Day 3 sensitivity",15904.104,15904.1036,3e-04,"PASS"
+"Enomoto Day 4 sensitivity",5573.1118,5573.1119,1e-04,"PASS"
+"Nakamura P-threshold sensitivity: P = 0.0005",2348.5789,2348.579,1e-04,"PASS"
+"Nakamura P-threshold sensitivity: P = 0.0001",2442.2071,2442.2072,1e-04,"PASS"

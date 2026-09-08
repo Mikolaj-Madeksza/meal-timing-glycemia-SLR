@@ -1,0 +1,113 @@
+check,status
+18 studies; 20 populations; 60 conditions; 263 outcomes,PASS
+Unique population_id,PASS
+Unique report_id,PASS
+Unique condition_id,PASS
+Unique outcome_id,PASS
+Publication study links,PASS
+Condition and outcome population links,PASS
+Outcome condition links,PASS
+Derivation outcome links,PASS
+Workbook/CSV agreement: Studies,PASS
+Workbook/CSV agreement: Reports,PASS
+Workbook/CSV agreement: Conditions,PASS
+Workbook/CSV agreement: Outcomes,PASS
+Workbook/CSV agreement: Derivations,PASS
+Workbook/CSV agreement: Data limitations,PASS
+Author data are four aggregate paired-test records,PASS
+Enomoto Day 1: unique extraction row,PASS
+Enomoto Day 1: source statistics preserved,PASS
+Enomoto Day 1: SE = paired SD / sqrt(n),PASS
+Enomoto Day 1: t = difference / SE; df = n-1,PASS
+Enomoto Day 2: unique extraction row,PASS
+Enomoto Day 2: source statistics preserved,PASS
+Enomoto Day 2: SE = paired SD / sqrt(n),PASS
+Enomoto Day 2: t = difference / SE; df = n-1,PASS
+Enomoto Day 3: unique extraction row,PASS
+Enomoto Day 3: source statistics preserved,PASS
+Enomoto Day 3: SE = paired SD / sqrt(n),PASS
+Enomoto Day 3: t = difference / SE; df = n-1,PASS
+Enomoto Day 4: unique extraction row,PASS
+Enomoto Day 4: source statistics preserved,PASS
+Enomoto Day 4: SE = paired SD / sqrt(n),PASS
+Enomoto Day 4: t = difference / SE; df = n-1,PASS
+18 studies with one assessment per item,PASS
+Valid risk judgments,PASS
+Risk-of-bias evidence and source retained,PASS
+"RoB summary Definitely Low, item 1",PASS
+"RoB summary linked: row 2, item 1",PASS
+"RoB summary Definitely Low, item 2",PASS
+"RoB summary linked: row 2, item 2",PASS
+"RoB summary Definitely Low, item 3",PASS
+"RoB summary linked: row 2, item 3",PASS
+"RoB summary Definitely Low, item 4",PASS
+"RoB summary linked: row 2, item 4",PASS
+"RoB summary Definitely Low, item 5",PASS
+"RoB summary linked: row 2, item 5",PASS
+"RoB summary Definitely Low, item 6",PASS
+"RoB summary linked: row 2, item 6",PASS
+"RoB summary Definitely Low, item 7",PASS
+"RoB summary linked: row 2, item 7",PASS
+"RoB summary Probably Low, item 1",PASS
+"RoB summary linked: row 3, item 1",PASS
+"RoB summary Probably Low, item 2",PASS
+"RoB summary linked: row 3, item 2",PASS
+"RoB summary Probably Low, item 3",PASS
+"RoB summary linked: row 3, item 3",PASS
+"RoB summary Probably Low, item 4",PASS
+"RoB summary linked: row 3, item 4",PASS
+"RoB summary Probably Low, item 5",PASS
+"RoB summary linked: row 3, item 5",PASS
+"RoB summary Probably Low, item 6",PASS
+"RoB summary linked: row 3, item 6",PASS
+"RoB summary Probably Low, item 7",PASS
+"RoB summary linked: row 3, item 7",PASS
+"RoB summary Probably High, item 1",PASS
+"RoB summary linked: row 4, item 1",PASS
+"RoB summary Probably High, item 2",PASS
+"RoB summary linked: row 4, item 2",PASS
+"RoB summary Probably High, item 3",PASS
+"RoB summary linked: row 4, item 3",PASS
+"RoB summary Probably High, item 4",PASS
+"RoB summary linked: row 4, item 4",PASS
+"RoB summary Probably High, item 5",PASS
+"RoB summary linked: row 4, item 5",PASS
+"RoB summary Probably High, item 6",PASS
+"RoB summary linked: row 4, item 6",PASS
+"RoB summary Probably High, item 7",PASS
+"RoB summary linked: row 4, item 7",PASS
+"RoB summary Definitely High, item 1",PASS
+"RoB summary linked: row 5, item 1",PASS
+"RoB summary Definitely High, item 2",PASS
+"RoB summary linked: row 5, item 2",PASS
+"RoB summary Definitely High, item 3",PASS
+"RoB summary linked: row 5, item 3",PASS
+"RoB summary Definitely High, item 4",PASS
+"RoB summary linked: row 5, item 4",PASS
+"RoB summary Definitely High, item 5",PASS
+"RoB summary linked: row 5, item 5",PASS
+"RoB summary Definitely High, item 6",PASS
+"RoB summary linked: row 5, item 6",PASS
+"RoB summary Definitely High, item 7",PASS
+"RoB summary linked: row 5, item 7",PASS
+Highest core item: Bandin_2015,PASS
+Highest core item: Bo_2015,PASS
+Highest core item: Bravo_Garcia_2024,PASS
+Highest core item: Enomoto_2026,PASS
+Highest core item: Garaulet_2022,PASS
+Highest core item: Gibbs_2014,PASS
+Highest core item: Gu_2020,PASS
+Highest core item: Haldar_2020,PASS
+Highest core item: Jarrett_1972,PASS
+Highest core item: Lopez_Minguez_2018,PASS
+Highest core item: Nakamura_2021,PASS
+Highest core item: Pizinger_2018,PASS
+Highest core item: Saad_2012,PASS
+Highest core item: Sato_2011,PASS
+Highest core item: Service_1983,PASS
+Highest core item: Stutz_2024,PASS
+Highest core item: Sulaimani_2025,PASS
+Highest core item: Yadav_2023,PASS
+Highest-core distribution,PASS
+No broken cell references: extraction.xlsx,PASS
+No broken cell references: risk_of_bias.xlsx,PASS

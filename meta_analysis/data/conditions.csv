@@ -1,0 +1,61 @@
+condition_id,study_id,population_id,label,timing_level,clock_time,relative_to_sleep,meal_occasion,meal_or_challenge,energy,carbohydrate,modifier,cointervention,exposure_days,notes,provenance
+Bandin_early,Bandin_2015,Bandin_2015_all,early lunch,earlier,13:00,,lunch,standardized mixed lunch,matched,matched,,standardized daily schedule,1 wk,,Bandin_2015; PDF pp2–3
+Bandin_late,Bandin_2015,Bandin_2015_all,late lunch,later,16:30,,lunch,standardized mixed lunch,matched,matched,,standardized daily schedule,1 wk,,Bandin_2015; PDF pp2–3
+Bo_morning,Bo_2015,Bo_2015_all,morning meal,earlier,08:00,,test meal,1168-kcal mixed meal,1168 kcal,39% energy,,matched laboratory day,1 d,30% protein; 31% fat,Bo_2015_primary; PDF pp2–3
+Bo_evening,Bo_2015,Bo_2015_all,evening meal,later,20:00,,test meal,1168-kcal mixed meal,1168 kcal,39% energy,,matched laboratory day,1 d,30% protein; 31% fat,Bo_2015_primary; PDF pp2–3
+Bravo_early,Bravo_Garcia_2024,Bravo_Garcia_2024_T2D,early breakfast,earlier,07:00,,breakfast,individually standardized mixed breakfast,~25% daily energy,~50% energy,nonexercise primary; postmeal walk secondary,otherwise matched,8,~30% fat; ~20% protein,Bravo_Garcia_2024; PDF pp3–4
+Bravo_mid,Bravo_Garcia_2024,Bravo_Garcia_2024_T2D,mid breakfast,later,09:30,,breakfast,individually standardized mixed breakfast,~25% daily energy,~50% energy,nonexercise primary; postmeal walk secondary,otherwise matched,8,~30% fat; ~20% protein,Bravo_Garcia_2024; PDF pp3–4
+Bravo_delayed,Bravo_Garcia_2024,Bravo_Garcia_2024_T2D,delayed breakfast,later,12:00,,breakfast,individually standardized mixed breakfast,~25% daily energy,~50% energy,nonexercise primary; postmeal walk secondary,otherwise matched,8,~30% fat; ~20% protein,Bravo_Garcia_2024; PDF pp3–4
+Enomoto_5h,Enomoto_2026,Enomoto_2026_all,dinner 5 h before bedtime,earlier,,5 h before bedtime,dinner,standardized dinner,matched,matched,,matched schedule,4,,Enomoto_2026; PDF pp3–4
+Enomoto_1h,Enomoto_2026,Enomoto_2026_all,dinner 1 h before bedtime,later,,1 h before bedtime,dinner,standardized dinner,matched,matched,,matched schedule,4,,Enomoto_2026; PDF pp3–4
+Garaulet_early,Garaulet_2022,Garaulet_2022_all,early-evening OGTT,earlier,,4 h before bedtime,OGTT,75-g OGTT,,75 g,,matched,1,,Garaulet_2022; PDF pp2–3
+Garaulet_late,Garaulet_2022,Garaulet_2022_all,late-evening OGTT,later,,1 h before bedtime,OGTT,75-g OGTT,,75 g,,matched,1,,Garaulet_2022; PDF pp2–3
+Gibbs_low_AM,Gibbs_2014,Gibbs_2014_all,low GI AM,earlier,08:00,,test meal,low GI mixed meal,matched,matched,low GI,matched except fasting duration,1,Morning fast ~11.8 h; evening ~8.4 h,Gibbs_2014; PDF pp2–3
+Gibbs_low_PM,Gibbs_2014,Gibbs_2014_all,low GI PM,later,20:00,,test meal,low GI mixed meal,matched,matched,low GI,matched except fasting duration,1,Morning fast ~11.8 h; evening ~8.4 h,Gibbs_2014; PDF pp2–3
+Gibbs_high_AM,Gibbs_2014,Gibbs_2014_all,high GI AM,earlier,08:00,,test meal,high GI mixed meal,matched,matched,high GI,matched except fasting duration,1,Morning fast ~11.8 h; evening ~8.4 h,Gibbs_2014; PDF pp2–3
+Gibbs_high_PM,Gibbs_2014,Gibbs_2014_all,high GI PM,later,20:00,,test meal,high GI mixed meal,matched,matched,high GI,matched except fasting duration,1,Morning fast ~11.8 h; evening ~8.4 h,Gibbs_2014; PDF pp2–3
+Gu_routine,Gu_2020,Gu_2020_all,routine dinner,earlier,18:00,,dinner,standardized dinner,35% daily kcal,matched dinner,,10% snack at 22:00,1,,Gu_2020; PDF pp2–3
+Gu_late,Gu_2020,Gu_2020_all,late dinner,later,22:00,,dinner,standardized dinner,35% daily kcal,matched dinner,,10% snack at 18:00,1,Dinner/snack timing swap,Gu_2020; PDF pp2–3
+Haldar_high_breakfast,Haldar_2020,Haldar_2020_all,high GI breakfast,earlier,08:00,,breakfast,high GI mixed meal,matched,matched,high GI,standardized subsequent meal,1,,Haldar_2020_primary; PDF pp3–4
+Haldar_high_dinner,Haldar_2020,Haldar_2020_all,high GI dinner,later,20:00,,dinner,high GI mixed meal,matched,matched,high GI,standardized subsequent meal,1,,Haldar_2020_primary; PDF pp3–4
+Haldar_low_breakfast,Haldar_2020,Haldar_2020_all,low GI breakfast,earlier,08:00,,breakfast,low GI mixed meal,matched,matched,low GI,standardized subsequent meal,1,,Haldar_2020_primary; PDF pp3–4
+Haldar_low_dinner,Haldar_2020,Haldar_2020_all,low GI dinner,later,20:00,,dinner,low GI mixed meal,matched,matched,low GI,standardized subsequent meal,1,,Haldar_2020_primary; PDF pp3–4
+Jarrett_09,Jarrett_1972,Jarrett_1972_all,09:00 OGTT,earlier,09:00,,OGTT,50-g oral glucose,,50 g,,matched,1,,Jarrett_1972; PDF pp1–2
+Jarrett_15,Jarrett_1972,Jarrett_1972_all,15:00 OGTT,later,15:00,,OGTT,50-g oral glucose,,50 g,,matched,1,,Jarrett_1972; PDF pp1–2
+Jarrett_20,Jarrett_1972,Jarrett_1972_all,20:00 OGTT,later,20:00,,OGTT,50-g oral glucose,,50 g,,matched,1,,Jarrett_1972; PDF pp1–2
+Lopez_early,Lopez_Minguez_2018,Lopez_Minguez_2018_all,early mixed dinner,earlier,,4 h before bedtime,dinner,high-GI mixed dinner: ravioli with tomato sauce and peach,30–35% daily energy,58–60% energy,MTNR1B genotype strata,matched food and 8-h fast; light/melatonin differed by assigned timing,1,15–17% protein; 25–27% fat,Lopez_Minguez_2018; PDF pp3–6; Dietary conditions
+Lopez_late,Lopez_Minguez_2018,Lopez_Minguez_2018_all,late mixed dinner,later,,1 h before bedtime,dinner,high-GI mixed dinner: ravioli with tomato sauce and peach,30–35% daily energy,58–60% energy,MTNR1B genotype strata,matched food and 8-h fast; light/melatonin differed by assigned timing,1,15–17% protein; 25–27% fat,Lopez_Minguez_2018; PDF pp3–6; Dietary conditions
+Nakamura_early,Nakamura_2021,Nakamura_2021_all,early dinner,earlier,18:00,,dinner,standardized mixed dinner,matched,matched,,matched meals/activity,3,,Nakamura_2021; PDF pp3–4
+Nakamura_late,Nakamura_2021,Nakamura_2021_all,late dinner,later,21:00,,dinner,standardized mixed dinner,matched,matched,,matched meals/activity,3,,Nakamura_2021; PDF pp3–4
+Piz_NsNm,Pizinger_2018,Pizinger_2018_all,normal sleep / normal meal,earlier,~13:00,,scheduled lunch MTT,liquid meal tolerance test,30% energy requirement,matched,sleep timing: normal,matched sleep duration and food intake,5,Meal delayed 3.5 h,Pizinger_2018; PDF pp2–4
+Piz_LsNm,Pizinger_2018,Pizinger_2018_all,late sleep / normal meal,earlier,~13:00,,scheduled lunch MTT,liquid meal tolerance test,30% energy requirement,matched,sleep timing: late,matched sleep duration and food intake,5,Meal delayed 3.5 h,Pizinger_2018; PDF pp2–4
+Piz_NsLm,Pizinger_2018,Pizinger_2018_all,normal sleep / late meal,later,~16:30,,scheduled lunch MTT,liquid meal tolerance test,30% energy requirement,matched,sleep timing: normal,matched sleep duration and food intake,5,Meal delayed 3.5 h,Pizinger_2018; PDF pp2–4
+Piz_LsLm,Pizinger_2018,Pizinger_2018_all,late sleep / late meal,later,~16:30,,scheduled lunch MTT,liquid meal tolerance test,30% energy requirement,matched,sleep timing: late,matched sleep duration and food intake,5,Meal delayed 3.5 h,Pizinger_2018; PDF pp2–4
+Saad_breakfast,Saad_2012,Saad_2012_all,breakfast,earlier,07:00,,breakfast,identical mixed meal,matched,matched,,matched inpatient day,1,,Saad_2012; PDF pp2–3
+Saad_lunch,Saad_2012,Saad_2012_all,lunch,later,13:00,,lunch,identical mixed meal,matched,matched,,matched inpatient day,1,,Saad_2012; PDF pp2–3
+Saad_dinner,Saad_2012,Saad_2012_all,dinner,later,19:00,,dinner,identical mixed meal,matched,matched,,matched inpatient day,1,,Saad_2012; PDF pp2–3
+Sato_normal,Sato_2011,Sato_2011_all,normal dinner,earlier,19:00,,dinner,standardized mixed dinner,matched,matched,,matched 24-h chamber schedule,1,,Sato_2011; PDF pp2–3
+Sato_late,Sato_2011,Sato_2011_all,late dinner,later,22:30,,dinner,standardized mixed dinner,matched,matched,,matched 24-h chamber schedule,1,,Sato_2011; PDF pp2–3
+Service_small_08,Service_1983,Service_1983_all,small meal 08:00,earlier,08:00,,meal,small standardized mixed meal,small,matched composition,small,Latin-square sequence,1,,Service_1983; PDF pp1–3
+Service_small_13,Service_1983,Service_1983_all,small meal 13:00,later,13:00,,meal,small standardized mixed meal,small,matched composition,small,Latin-square sequence,1,,Service_1983; PDF pp1–3
+Service_small_18,Service_1983,Service_1983_all,small meal 18:00,later,18:00,,meal,small standardized mixed meal,small,matched composition,small,Latin-square sequence,1,,Service_1983; PDF pp1–3
+Service_medium_08,Service_1983,Service_1983_all,medium meal 08:00,earlier,08:00,,meal,medium standardized mixed meal,medium,matched composition,medium,Latin-square sequence,1,,Service_1983; PDF pp1–3
+Service_medium_13,Service_1983,Service_1983_all,medium meal 13:00,later,13:00,,meal,medium standardized mixed meal,medium,matched composition,medium,Latin-square sequence,1,,Service_1983; PDF pp1–3
+Service_medium_18,Service_1983,Service_1983_all,medium meal 18:00,later,18:00,,meal,medium standardized mixed meal,medium,matched composition,medium,Latin-square sequence,1,,Service_1983; PDF pp1–3
+Service_large_08,Service_1983,Service_1983_all,large meal 08:00,earlier,08:00,,meal,large standardized mixed meal,large,matched composition,large,Latin-square sequence,1,,Service_1983; PDF pp1–3
+Service_large_13,Service_1983,Service_1983_all,large meal 13:00,later,13:00,,meal,large standardized mixed meal,large,matched composition,large,Latin-square sequence,1,,Service_1983; PDF pp1–3
+Service_large_18,Service_1983,Service_1983_all,large meal 18:00,later,18:00,,meal,large standardized mixed meal,large,matched composition,large,Latin-square sequence,1,,Service_1983; PDF pp1–3
+Stutz_2024_early_morning,Stutz_2024,Stutz_2024_early,morning high-GI meal,earlier,07:00,,test meal,high-GI mixed meal,matched,matched,chronotype stratum,controlled trial,1,,Stutz_2024; PDF pp3–5
+Stutz_2024_early_evening,Stutz_2024,Stutz_2024_early,evening high-GI meal,later,20:00,,test meal,high-GI mixed meal,matched,matched,chronotype stratum,controlled trial,1,,Stutz_2024; PDF pp3–5
+Stutz_2024_late_morning,Stutz_2024,Stutz_2024_late,morning high-GI meal,earlier,07:00,,test meal,high-GI mixed meal,matched,matched,chronotype stratum,controlled trial,1,,Stutz_2024; PDF pp3–5
+Stutz_2024_late_evening,Stutz_2024,Stutz_2024_late,evening high-GI meal,later,20:00,,test meal,high-GI mixed meal,matched,matched,chronotype stratum,controlled trial,1,,Stutz_2024; PDF pp3–5
+Sulaimani_control_AM,Sulaimani_2025,Sulaimani_2025_all,control rice AM,earlier,~08:30,,test meal,white rice,matched,matched,control,matched,1,,Sulaimani_2025; PDF pp3–6
+Sulaimani_control_PM,Sulaimani_2025,Sulaimani_2025_all,control rice PM,later,~18:30,,test meal,white rice,matched,matched,control,matched,1,,Sulaimani_2025; PDF pp3–6
+Sulaimani_GTE_AM,Sulaimani_2025,Sulaimani_2025_all,GTE rice AM,earlier,~08:30,,test meal,green-tea-extract enriched white rice,matched,matched,GTE,matched,1,,Sulaimani_2025; PDF pp3–6
+Sulaimani_GTE_PM,Sulaimani_2025,Sulaimani_2025_all,GTE rice PM,later,~18:30,,test meal,green-tea-extract enriched white rice,matched,matched,GTE,matched,1,,Sulaimani_2025; PDF pp3–6
+Yadav_2023_ND_B,Yadav_2023,Yadav_2023_ND,B,earlier,07:00,,breakfast,identical mixed meal,8 kcal/kg,75 g,metabolic-status stratum,matched inpatient day,1,,Yadav_2023; PDF pp2–4
+Yadav_2023_ND_L,Yadav_2023,Yadav_2023_ND,L,later,13:00,,lunch,identical mixed meal,8 kcal/kg,75 g,metabolic-status stratum,matched inpatient day,1,,Yadav_2023; PDF pp2–4
+Yadav_2023_ND_D,Yadav_2023,Yadav_2023_ND,D,later,19:00,,dinner,identical mixed meal,8 kcal/kg,75 g,metabolic-status stratum,matched inpatient day,1,,Yadav_2023; PDF pp2–4
+Yadav_2023_T2D_B,Yadav_2023,Yadav_2023_T2D,B,earlier,07:00,,breakfast,identical mixed meal,8 kcal/kg,75 g,metabolic-status stratum,matched inpatient day,1,,Yadav_2023; PDF pp2–4
+Yadav_2023_T2D_L,Yadav_2023,Yadav_2023_T2D,L,later,13:00,,lunch,identical mixed meal,8 kcal/kg,75 g,metabolic-status stratum,matched inpatient day,1,,Yadav_2023; PDF pp2–4
+Yadav_2023_T2D_D,Yadav_2023,Yadav_2023_T2D,D,later,19:00,,dinner,identical mixed meal,8 kcal/kg,75 g,metabolic-status stratum,matched inpatient day,1,,Yadav_2023; PDF pp2–4
