@@ -12,5 +12,3 @@
 "Service_medium","Service_1983",216.7,"mmol·L⁻¹·300 min⁻¹ (as printed)","positive CI excludes zero across r=0.25–0.75","reported_table"
 "Sulaimani_control","Sulaimani_2025",165,"mmol/L×min","positive CI excludes zero across r=0.25–0.75","graph_digitized"
 "Sulaimani_GTE","Sulaimani_2025",200,"mmol/L×min","positive CI excludes zero across r=0.25–0.75","graph_digitized"
-"Yadav_ND_BD","Yadav_2023",224.8,"mmol/L×300 min (as printed)","positive CI excludes zero across r=0.25–0.75","reported_table"
-"Yadav_T2D_BD","Yadav_2023",207.1,"mmol/L×300 min (as printed)","CI conclusion changes across assumed correlations","reported_table"

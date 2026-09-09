@@ -15,8 +15,8 @@ def records(name):
         return list(csv.DictReader(f))
 
 studies, reports, conditions, outcomes = map(records, ["studies", "reports", "conditions", "outcomes"])
-check("18 studies; 20 populations; 60 conditions; 263 outcomes",
-      (len({r['study_id'] for r in studies}), len(studies), len(conditions), len(outcomes)) == (18,20,60,263))
+check("17 studies; 18 populations; 53 conditions; 276 outcomes",
+      (len({r['study_id'] for r in studies}), len(studies), len(conditions), len(outcomes)) == (17,18,53,276))
 for data, key in [(studies,'population_id'),(reports,'report_id'),(conditions,'condition_id'),(outcomes,'outcome_id')]:
     check(f"Unique {key}", len({r[key] for r in data}) == len(data) and all(r[key] for r in data))
 study_ids = {r['study_id'] for r in studies}
@@ -50,7 +50,7 @@ rob=load_workbook(ROOT/'risk_of_bias.xlsx',data_only=True)
 formulas=load_workbook(ROOT/'risk_of_bias.xlsx',data_only=False)
 assessment=list(rob['Assessments'].values)[1:]
 ranks=['Definitely Low','Probably Low','Probably High','Definitely High']
-check("18 studies with one assessment per item",len(assessment)==126 and set(r[0] for r in assessment)==study_ids and all(Counter(r[3] for r in assessment if r[0]==study)==Counter(range(1,8)) for study in study_ids))
+check("17 studies with one assessment per item",len(assessment)==119 and set(r[0] for r in assessment)==study_ids and all(Counter(r[3] for r in assessment if r[0]==study)==Counter(range(1,8)) for study in study_ids))
 check("Valid risk judgments",all(r[6] in ranks for r in assessment))
 check("Risk-of-bias evidence and source retained",all(r[7] and r[8] for r in assessment))
 for row in range(2,6):
@@ -58,7 +58,7 @@ for row in range(2,6):
         check(f"RoB summary {ranks[row-2]}, item {item}",rob['Summary'].cell(row,item+1).value==sum(r[3]==item and r[6]==ranks[row-2] for r in assessment))
         check(f"RoB summary linked: row {row}, item {item}",formulas['Summary'].cell(row,item+1).data_type=='f')
 highest=[]
-for row in range(10,28):
+for row in range(10,27):
     study=rob['Summary'].cell(row,1).value
     expected=max((r[6] for r in assessment if r[0]==study and r[3]<=6),key=ranks.index)
     highest.append(expected)

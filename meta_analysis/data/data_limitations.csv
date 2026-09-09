@@ -15,8 +15,11 @@ I013,Pizinger_2018,unit/sample,open,Insulin AUC denominator changes across a pag
 I014,Service_1983,unit/missing arms,open,Integrated glucose unit is malformed in print; small-meal numerical values and insulin/GIP results are figure-based.,Verify unit and digitize small-meal/insulin only if needed for a prespecified analysis.,Service_1983; Results/Figures
 I015,Stutz_2024,internal consistency,open,Several rounded model contrasts do not equal arithmetic differences of condition means; late-chronotype 24-h iAUC CI appears unusual.,Use reported model contrasts; verify CI against source table/publisher correction.,Stutz_2024; Table 2
 I016,Sulaimani_2025,graph digitization,open,AUC and peak values are figure-only; time×treatment structure creates dependent eligible contrasts.,Replace approximate values if exact data are obtained; preserve both control and GTE contrasts.,Sulaimani_2025; Figures 3–4
-I017,Yadav_2023,unit/dependency,open,AUC labels and magnitudes require unit QA; ND and T2D cohorts must remain separate.,Verify units and model cohorts separately.,Yadav_2023; Table 1
 I018,all,scope,resolved,"Mixed meals, isolated glucose challenges, daypart, same-meal-occasion, relative-to-sleep, healthy, and T2D studies are not one estimand.","Analyze compatible comparisons separately by outcome definition, observation window, meal or challenge, population, and paired precision.",meta_analysis/analysis_plan.md
 I019,Haldar_2020,participant flow,resolved,"The CONSORT flow reports 48 randomized, 37 completed, and 34 analyzed per protocol; 40 is not the randomized denominator.",Counts corrected from the report flow diagram before ROBUST-RCT assessment.,Haldar_2020_primary; CONSORT flow
 I020,Nakamura_2021,participant flow,resolved,The randomized denominator is 14; the analyzed sample is 12.,Counts corrected from Methods and participant flow before ROBUST-RCT assessment.,Nakamura_2021; Methods/participant flow
 I021,Stutz_2024,participant flow,resolved,Randomized and completed counts are not reported by chronotype stratum; analyzed stratum counts cannot substitute for these denominators.,"Stratum randomized/completed fields left blank; overall flow retained in notes: 60 randomized, 46 completed, 45 analyzed.",Stutz_2024; Figure 1 and Methods
+,Lu_2022,,,,,"Lu 2022; pp3-8, Methods/Results and Figures 2-3"
+,Lu_2022,,,,,"Lu 2022; pp3-8, Methods/Results and Figures 2-3"
+,Lu_2022,,,,,"Lu 2022; pp3-8, Methods/Results and Figures 2-3"
+,Lu_2022,,,,,"Lu 2022; pp3-8, Methods/Results and Figures 2-3"

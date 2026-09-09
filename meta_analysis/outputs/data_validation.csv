@@ -1,5 +1,5 @@
 check,status
-18 studies; 20 populations; 60 conditions; 263 outcomes,PASS
+17 studies; 18 populations; 53 conditions; 276 outcomes,PASS
 Unique population_id,PASS
 Unique report_id,PASS
 Unique condition_id,PASS
@@ -31,7 +31,7 @@ Enomoto Day 4: unique extraction row,PASS
 Enomoto Day 4: source statistics preserved,PASS
 Enomoto Day 4: SE = paired SD / sqrt(n),PASS
 Enomoto Day 4: t = difference / SE; df = n-1,PASS
-18 studies with one assessment per item,PASS
+17 studies with one assessment per item,PASS
 Valid risk judgments,PASS
 Risk-of-bias evidence and source retained,PASS
 "RoB summary Definitely Low, item 1",PASS
@@ -100,14 +100,13 @@ Highest core item: Gu_2020,PASS
 Highest core item: Haldar_2020,PASS
 Highest core item: Jarrett_1972,PASS
 Highest core item: Lopez_Minguez_2018,PASS
+Highest core item: Lu_2022,PASS
 Highest core item: Nakamura_2021,PASS
 Highest core item: Pizinger_2018,PASS
-Highest core item: Saad_2012,PASS
 Highest core item: Sato_2011,PASS
 Highest core item: Service_1983,PASS
 Highest core item: Stutz_2024,PASS
 Highest core item: Sulaimani_2025,PASS
-Highest core item: Yadav_2023,PASS
 Highest-core distribution,PASS
 No broken cell references: extraction.xlsx,PASS
 No broken cell references: risk_of_bias.xlsx,PASS

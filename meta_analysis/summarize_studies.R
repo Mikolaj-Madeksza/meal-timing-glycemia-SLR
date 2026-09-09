@@ -123,6 +123,8 @@ make_condition <- function(spec) {
   )
 }
 
+direct_specs <- subset(direct_specs, study_id %in% studies$study_id)
+condition_specs <- subset(condition_specs, study_id %in% studies$study_id)
 direct_rows <- do.call(rbind, lapply(seq_len(nrow(direct_specs)), function(i) make_direct(direct_specs[i,])))
 condition_rows <- do.call(rbind, lapply(seq_len(nrow(condition_specs)), function(i) make_condition(condition_specs[i,])))
 
@@ -145,19 +147,29 @@ jarrett_row <- data.frame(
   precision_status = "participant-level AUC variance unavailable", source_provenance = "Jarrett_1972; PDF pp2-3; Tables II-III", stringsAsFactors = FALSE
 )
 
-results <- rbind(direct_rows, condition_rows, jarrett_row)
+lu_row <- jarrett_row
+lu_row[1,] <- NA
+lu_row$study_id <- "Lu_2022"; lu_row$population_id <- "Lu_2022_all"
+lu_row$contrast <- "14:00 versus 12:00 lunch, no preload"
+lu_row$metric <- "Capillary glucose iAUC"; lu_row$auc_definition <- "incremental; reported window ambiguous"
+lu_row$p_value <- "<0.05"; lu_row$units <- "mmol/L×min"
+lu_row$result_form <- "narrative_contrast"; lu_row$data_status <- "narrative_only"
+lu_row$precision_status <- "No numerical contrast/paired precision; AUC label 0-120 versus sampling -30 to +90 min"
+lu_row$source_provenance <- "Lu 2022; pp7-8, Results 3.3 and Figure 3"
+results <- rbind(direct_rows, condition_rows, jarrett_row, lu_row)
 study_fields <- studies[c("study_id", "population_id", "timing_construct", "challenge_type", "metabolic_group")]
 results <- merge(results, study_fields, by = c("study_id", "population_id"), all.x = TRUE, suffixes = c("", ".study"), sort = FALSE)
 for (field in c("timing_construct", "challenge_type", "metabolic_group")) results[[field]] <- results[[paste0(field, ".study")]]
 results <- results[setdiff(names(results), grep("\\.study$", names(results), value = TRUE))]
 results$direction <- ifelse(results$later_minus_earlier > 0, "larger response later", ifelse(results$later_minus_earlier < 0, "smaller response later", "no difference"))
+results$direction[results$study_id == "Lu_2022"] <- "larger capillary response later (reported P<0.05); no numeric contrast extracted"
 results <- results[order(match(results$population_id, studies$population_id), results$contrast),]
 
 stopifnot(
   setequal(unique(results$population_id), studies$population_id),
-  length(unique(results$study_id)) == 18L,
-  all(is.finite(results$later_minus_earlier)),
-  nrow(results) == 30L
+  length(unique(results$study_id)) == 17L,
+  all(is.finite(results$later_minus_earlier) | results$study_id == "Lu_2022"),
+  nrow(results) == 25L
 )
 
 write.csv(results, file.path(output_dir, "study_primary_result_map.csv"), row.names = FALSE, na = "")

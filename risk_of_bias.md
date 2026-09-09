@@ -1,6 +1,6 @@
 # Risk of bias
 
-ROBUST-RCT (March 2025) was applied to acute glucose AUC/iAUC and timed glucose/CGM outcomes in 18 studies. Assessments contains one row per study and item, including the response or count, risk judgment, supporting evidence, and source location. `report_id` links to the publication details in the extraction workbook.
+ROBUST-RCT (March 2025) was applied to acute glucose AUC/iAUC and timed glucose/CGM outcomes in 17 studies. Assessments contains one row per study and item, including the response or count, risk judgment, supporting evidence, and source location. `report_id` links to the publication details in the extraction workbook.
 
 The six core items cover random sequence generation, allocation concealment, participant blinding, healthcare-provider blinding, outcome-assessor blinding, and outcome data excluded from analysis. Selective reporting is a review-specific optional seventh item.
 

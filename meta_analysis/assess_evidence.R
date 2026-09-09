@@ -25,10 +25,10 @@ for (column in intersect(numeric_columns, names(outcomes))) {
 }
 
 stopifnot(
-  length(unique(studies$study_id)) == 18L,
-  nrow(studies) == 20L,
-  nrow(conditions) == 60L,
-  nrow(outcomes) == 263L,
+  length(unique(studies$study_id)) == 17L,
+  nrow(studies) == 18L,
+  nrow(conditions) == 53L,
+  nrow(outcomes) == 276L,
   all(unique(outcomes$study_id) %in% unique(studies$study_id)),
   all(unique(conditions$population_id) %in% unique(studies$population_id)),
   all(unique(outcomes$population_id) %in% unique(studies$population_id)),
@@ -221,6 +221,8 @@ precision_availability <- data.frame(
   ),
   stringsAsFactors = FALSE
 )
+precision_availability <- subset(precision_availability, study_id %in% studies$study_id)
+precision_availability <- rbind(precision_availability, data.frame(study_id="Lu_2022", precision_availability_class="narrative capillary contrast; paired precision unavailable", remaining_limitation="Capillary AUC window unclear; long CGM window overlaps dinner. No precision imputed."))
 stopifnot(setequal(precision_availability$study_id, unique(studies$study_id)))
 write.csv(precision_availability, file.path(table_dir, "study_precision_availability.csv"), row.names = FALSE)
 
@@ -250,11 +252,11 @@ comparison_groups <- data.frame(
     "Gibbs_2014; Stutz_2024", "Haldar_2020; Sulaimani_2025", "Bo_2015; Pizinger_2018",
     "Bandin_2015; Enomoto_2026; Lopez_Minguez_2018; Nakamura_2021",
     "Enomoto_2026; Nakamura_2021", "Bandin_2015; Lopez_Minguez_2018", "Gu_2020; Sato_2011",
-    "Saad_2012; Service_1983; Yadav_2023_ND", "Bravo_Garcia_2024; Yadav_2023_T2D",
+    "Service_1983", "Bravo_Garcia_2024",
     "Garaulet_2022; Jarrett_1972"
   ),
-  k_studies = c(6, 2, 2, 2, 4, 2, 2, 2, 3, 2, 2),
-  approximate_unique_participants = c(129, 55, 48, 26, 75, 25, 50, 30, 45, 30, 869),
+  k_studies = c(6, 2, 2, 2, 4, 2, 2, 2, 1, 1, 2),
+  approximate_unique_participants = c(129, 55, 48, 26, 75, 25, 50, 30, 6, 11, 869),
   compatibility = c(
     "Common daypart construct and 2–3-h window; AUC definition, measurement method, modifier structure, and units differ",
     "Same window/iAUC label, but CGM versus plasma and chronotype/GI multi-condition structure",
@@ -264,8 +266,8 @@ comparison_groups <- data.frame(
     "Same window, CGM, incremental AUC, and dinner occasion; Enomoto has exact author-provided paired precision, while Nakamura remains graph-digitized with a conservative p-threshold SE bound",
     "Both are mixed meals with direct precision, but 150 versus 120 min and AUC-above-baseline versus total AUC differ",
     "Different windows and measurement methods; Gu includes reciprocal snack timing",
-    "Long-window supportive evidence; 300 versus 360-min estimands and multi-condition structures differ",
-    "Different timing questions: breakfast delay versus breakfast/lunch/dinner daypart",
+    "Single study with dependent within-meal-size contrasts",
+    "Single breakfast-delay study",
     "Mixed relative-to-sleep versus clock-time constructs; Jarrett lacks reported AUC precision"
   ),
   synthesis_role = c(
@@ -283,6 +285,9 @@ comparison_groups <- data.frame(
   ),
   stringsAsFactors = FALSE
 )
+lu_group <- comparison_groups[1,]
+lu_group[1,] <- list("LUNCH_LU", "supportive block", NA, "No-preload lunch at 14:00 versus 12:00", "Lu_2022", 1, 26, "Capillary n=20; AUC window unresolved; 270-min CGM includes next dinner in late condition", "Narrative only; no pooled estimate or imputed precision")
+comparison_groups <- rbind(comparison_groups, lu_group)
 write.csv(comparison_groups, file.path(table_dir, "comparison_groups.csv"), row.names = FALSE)
 
 # Audit whether a single family-wide effect representation is both computable
@@ -341,6 +346,7 @@ evidence_destinations <- data.frame(
   ),
   stringsAsFactors = FALSE
 )
+evidence_destinations <- rbind(evidence_destinations, data.frame(population_id="Lu_2022_all", primary_destination="LUNCH_LU", destination_label="Lunch delay; capillary window unresolved, long CGM contextual"))
 evidence_destinations <- merge(
   studies[c("study_id", "population_id", "metabolic_group", "timing_construct", "challenge_type", "n_analyzed")],
   evidence_destinations,
@@ -402,6 +408,8 @@ comparison_specs <- data.frame(
   ),
   stringsAsFactors = FALSE
 )
+comparison_specs <- subset(comparison_specs, study_id %in% studies$study_id)
+
 
 get_condition_row <- function(spec, condition_id) {
   rows <- outcomes[
