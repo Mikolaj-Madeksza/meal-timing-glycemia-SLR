@@ -6,7 +6,7 @@ Data, risk-of-bias assessments, and reproducible analyses for the systematic rev
 - [risk_of_bias.xlsx](risk_of_bias.xlsx): detailed ROBUST-RCT assessments and a formula-linked summary.
 - [meta_analysis](meta_analysis/README.md): analysis inputs, R code, tables, figures, and validation results.
 
-The extraction contains 17 studies, 18 study/population records, 53 conditions, and 276 outcome records. Publication details and DOIs are in the Reports sheet. Source references identify the supporting table, figure, or passage. Study, population, condition, and outcome identifiers link related scientific records; they do not identify participants.
+The extraction contains 17 studies, 18 study/population records, 53 conditions, and 370 outcome records. Publication details and DOIs are in the Reports sheet. Source references identify the supporting table, figure, or passage. Study, population, condition, and outcome identifiers link related scientific records; they do not identify participants.
 
 The only pooled comparison is Enomoto 2026 and Nakamura 2021: 180-minute CGM glucose iAUC after later versus earlier dinner. Other studies are reported individually. See the [analysis plan](meta_analysis/analysis_plan.md) for the estimand, methods, and limitations.
 

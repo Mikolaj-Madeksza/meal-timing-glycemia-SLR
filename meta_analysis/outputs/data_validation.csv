@@ -1,5 +1,5 @@
 check,status
-17 studies; 18 populations; 53 conditions; 276 outcomes,PASS
+17 studies; 18 populations; 53 conditions; 370 outcomes,PASS
 Unique population_id,PASS
 Unique report_id,PASS
 Unique condition_id,PASS

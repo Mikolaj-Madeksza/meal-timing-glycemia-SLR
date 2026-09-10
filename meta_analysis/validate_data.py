@@ -15,8 +15,8 @@ def records(name):
         return list(csv.DictReader(f))
 
 studies, reports, conditions, outcomes = map(records, ["studies", "reports", "conditions", "outcomes"])
-check("17 studies; 18 populations; 53 conditions; 276 outcomes",
-      (len({r['study_id'] for r in studies}), len(studies), len(conditions), len(outcomes)) == (17,18,53,276))
+check("17 studies; 18 populations; 53 conditions; 370 outcomes",
+      (len({r['study_id'] for r in studies}), len(studies), len(conditions), len(outcomes)) == (17,18,53,370))
 for data, key in [(studies,'population_id'),(reports,'report_id'),(conditions,'condition_id'),(outcomes,'outcome_id')]:
     check(f"Unique {key}", len({r[key] for r in data}) == len(data) and all(r[key] for r in data))
 study_ids = {r['study_id'] for r in studies}

@@ -111,7 +111,7 @@ make_condition <- function(spec) {
   early <- x[x$condition_id == spec$early_condition,]
   late <- x[x$condition_id == spec$late_condition,]
   stopifnot(nrow(early) == 1L, nrow(late) == 1L, early$metric == late$metric, early$units_original == late$units_original)
-  data.frame(
+  result <- data.frame(
     study_id = spec$study_id, population_id = spec$population_id, contrast = spec$display_label,
     timing_construct = NA_character_, challenge_type = NA_character_, metabolic_group = NA_character_,
     metric = early$metric, auc_definition = early$auc_definition, window_min = early$window_min,
@@ -121,6 +121,15 @@ make_condition <- function(spec) {
     precision_status = "paired/model precision unavailable in the report", source_provenance = paste(unique(c(early$source_provenance, late$source_provenance)), collapse = "; "),
     stringsAsFactors = FALSE
   )
+  paired <- subset(outcomes, study_id == spec$study_id & contrast_id == spec$contrast_id & metric == "glucose iAUC paired difference")
+  if (nrow(paired) == 1L) {
+    result$later_minus_earlier <- paired$value
+    result$ci_low <- paired$ci_low; result$ci_high <- paired$ci_high
+    result$result_form <- "within_person_contrast"; result$data_status <- paired$data_status
+    result$precision_status <- "95% CI calculated from author-provided participant-level paired differences"
+    result$source_provenance <- paired$source_provenance
+  }
+  result
 }
 
 direct_specs <- subset(direct_specs, study_id %in% studies$study_id)
@@ -153,8 +162,12 @@ lu_row$study_id <- "Lu_2022"; lu_row$population_id <- "Lu_2022_all"
 lu_row$contrast <- "14:00 versus 12:00 lunch, no preload"
 lu_row$metric <- "Capillary glucose iAUC"; lu_row$auc_definition <- "incremental; reported window ambiguous"
 lu_row$p_value <- "<0.05"; lu_row$units <- "mmol/L×min"
-lu_row$result_form <- "narrative_contrast"; lu_row$data_status <- "narrative_only"
-lu_row$precision_status <- "No numerical contrast/paired precision; AUC label 0-120 versus sampling -30 to +90 min"
+lu_values <- subset(outcomes, study_id == "Lu_2022" & metric == "Capillary glucose iAUC" & data_status == "graph_digitized")
+lu_row$early_value <- lu_values$value[lu_values$timing_level == "earlier"]
+lu_row$late_value <- lu_values$value[lu_values$timing_level == "later"]
+lu_row$later_minus_earlier <- lu_row$late_value - lu_row$early_value
+lu_row$result_form <- "difference of digitized condition means"; lu_row$data_status <- "graph_digitized"
+lu_row$precision_status <- "Paired precision unavailable; AUC label 0-120 versus sampling -30 to +90 min"
 lu_row$source_provenance <- "Lu 2022; pp7-8, Results 3.3 and Figure 3"
 results <- rbind(direct_rows, condition_rows, jarrett_row, lu_row)
 study_fields <- studies[c("study_id", "population_id", "timing_construct", "challenge_type", "metabolic_group")]
@@ -162,7 +175,7 @@ results <- merge(results, study_fields, by = c("study_id", "population_id"), all
 for (field in c("timing_construct", "challenge_type", "metabolic_group")) results[[field]] <- results[[paste0(field, ".study")]]
 results <- results[setdiff(names(results), grep("\\.study$", names(results), value = TRUE))]
 results$direction <- ifelse(results$later_minus_earlier > 0, "larger response later", ifelse(results$later_minus_earlier < 0, "smaller response later", "no difference"))
-results$direction[results$study_id == "Lu_2022"] <- "larger capillary response later (reported P<0.05); no numeric contrast extracted"
+results$direction[results$study_id == "Lu_2022"] <- "larger capillary response later (reported P<0.05); approximate digitized contrast"
 results <- results[order(match(results$population_id, studies$population_id), results$contrast),]
 
 stopifnot(

@@ -16,10 +16,10 @@ Gibbs_high_AM,Gibbs_2014,Gibbs_2014_all,high GI AM,earlier,08:00,,test meal,high
 Gibbs_high_PM,Gibbs_2014,Gibbs_2014_all,high GI PM,later,20:00,,test meal,high GI mixed meal,matched,matched,high GI,matched except fasting duration,1,Morning fast ~11.8 h; evening ~8.4 h,Gibbs_2014; PDF pp2–3
 Gu_routine,Gu_2020,Gu_2020_all,routine dinner,earlier,18:00,,dinner,standardized dinner,35% daily kcal,matched dinner,,10% snack at 22:00,1,,Gu_2020; PDF pp2–3
 Gu_late,Gu_2020,Gu_2020_all,late dinner,later,22:00,,dinner,standardized dinner,35% daily kcal,matched dinner,,10% snack at 18:00,1,Dinner/snack timing swap,Gu_2020; PDF pp2–3
-Haldar_high_breakfast,Haldar_2020,Haldar_2020_all,high GI breakfast,earlier,08:00,,breakfast,high GI mixed meal,matched,matched,high GI,standardized subsequent meal,1,,Haldar_2020_primary; PDF pp3–4
-Haldar_high_dinner,Haldar_2020,Haldar_2020_all,high GI dinner,later,20:00,,dinner,high GI mixed meal,matched,matched,high GI,standardized subsequent meal,1,,Haldar_2020_primary; PDF pp3–4
-Haldar_low_breakfast,Haldar_2020,Haldar_2020_all,low GI breakfast,earlier,08:00,,breakfast,low GI mixed meal,matched,matched,low GI,standardized subsequent meal,1,,Haldar_2020_primary; PDF pp3–4
-Haldar_low_dinner,Haldar_2020,Haldar_2020_all,low GI dinner,later,20:00,,dinner,low GI mixed meal,matched,matched,low GI,standardized subsequent meal,1,,Haldar_2020_primary; PDF pp3–4
+Haldar_high_breakfast,Haldar_2020,Haldar_2020_all,high GI breakfast,earlier,~09:00,,breakfast,high GI mixed meal,matched,matched,high GI,standardized subsequent meal,1,,Haldar_2020_primary; PDF pp3–4
+Haldar_high_dinner,Haldar_2020,Haldar_2020_all,high GI dinner,later,~18:30,,dinner,high GI mixed meal,matched,matched,high GI,standardized subsequent meal,1,,Haldar_2020_primary; PDF pp3–4
+Haldar_low_breakfast,Haldar_2020,Haldar_2020_all,low GI breakfast,earlier,~09:00,,breakfast,low GI mixed meal,matched,matched,low GI,standardized subsequent meal,1,,Haldar_2020_primary; PDF pp3–4
+Haldar_low_dinner,Haldar_2020,Haldar_2020_all,low GI dinner,later,~18:30,,dinner,low GI mixed meal,matched,matched,low GI,standardized subsequent meal,1,,Haldar_2020_primary; PDF pp3–4
 Jarrett_09,Jarrett_1972,Jarrett_1972_all,09:00 OGTT,earlier,09:00,,OGTT,50-g oral glucose,,50 g,,matched,1,,Jarrett_1972; PDF pp1–2
 Jarrett_15,Jarrett_1972,Jarrett_1972_all,15:00 OGTT,later,15:00,,OGTT,50-g oral glucose,,50 g,,matched,1,,Jarrett_1972; PDF pp1–2
 Jarrett_20,Jarrett_1972,Jarrett_1972_all,20:00 OGTT,later,20:00,,OGTT,50-g oral glucose,,50 g,,matched,1,,Jarrett_1972; PDF pp1–2
@@ -48,7 +48,7 @@ Stutz_2024_early_morning,Stutz_2024,Stutz_2024_early,morning high-GI meal,earlie
 Stutz_2024_early_evening,Stutz_2024,Stutz_2024_early,evening high-GI meal,later,20:00,,test meal,high-GI mixed meal,matched,matched,chronotype stratum,controlled trial,1,,Stutz_2024; PDF pp3–5
 Stutz_2024_late_morning,Stutz_2024,Stutz_2024_late,morning high-GI meal,earlier,07:00,,test meal,high-GI mixed meal,matched,matched,chronotype stratum,controlled trial,1,,Stutz_2024; PDF pp3–5
 Stutz_2024_late_evening,Stutz_2024,Stutz_2024_late,evening high-GI meal,later,20:00,,test meal,high-GI mixed meal,matched,matched,chronotype stratum,controlled trial,1,,Stutz_2024; PDF pp3–5
-Sulaimani_control_AM,Sulaimani_2025,Sulaimani_2025_all,control rice AM,earlier,~08:30,,test meal,white rice,matched,matched,control,matched,1,,Sulaimani_2025; PDF pp3–6
-Sulaimani_control_PM,Sulaimani_2025,Sulaimani_2025_all,control rice PM,later,~18:30,,test meal,white rice,matched,matched,control,matched,1,,Sulaimani_2025; PDF pp3–6
-Sulaimani_GTE_AM,Sulaimani_2025,Sulaimani_2025_all,GTE rice AM,earlier,~08:30,,test meal,green-tea-extract enriched white rice,matched,matched,GTE,matched,1,,Sulaimani_2025; PDF pp3–6
-Sulaimani_GTE_PM,Sulaimani_2025,Sulaimani_2025_all,GTE rice PM,later,~18:30,,test meal,green-tea-extract enriched white rice,matched,matched,GTE,matched,1,,Sulaimani_2025; PDF pp3–6
+Sulaimani_control_AM,Sulaimani_2025,Sulaimani_2025_all,control rice AM,earlier,~08:30,,test meal,white rice,matched,matched,control,matched,1,Meal approximately 30 min after 08:00/18:00 baseline sampling; matched ≥9-h fast.,Sulaimani_2025; PDF pp3–6
+Sulaimani_control_PM,Sulaimani_2025,Sulaimani_2025_all,control rice PM,later,~18:30,,test meal,white rice,matched,matched,control,matched,1,Meal approximately 30 min after 08:00/18:00 baseline sampling; matched ≥9-h fast.,Sulaimani_2025; PDF pp3–6
+Sulaimani_GTE_AM,Sulaimani_2025,Sulaimani_2025_all,GTE rice AM,earlier,~08:30,,test meal,green-tea-extract enriched white rice,matched,matched,GTE,matched,1,Meal approximately 30 min after 08:00/18:00 baseline sampling; matched ≥9-h fast.,Sulaimani_2025; PDF pp3–6
+Sulaimani_GTE_PM,Sulaimani_2025,Sulaimani_2025_all,GTE rice PM,later,~18:30,,test meal,green-tea-extract enriched white rice,matched,matched,GTE,matched,1,Meal approximately 30 min after 08:00/18:00 baseline sampling; matched ≥9-h fast.,Sulaimani_2025; PDF pp3–6

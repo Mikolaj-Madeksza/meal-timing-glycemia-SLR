@@ -28,7 +28,7 @@ stopifnot(
   length(unique(studies$study_id)) == 17L,
   nrow(studies) == 18L,
   nrow(conditions) == 53L,
-  nrow(outcomes) == 276L,
+  nrow(outcomes) == 370L,
   all(unique(outcomes$study_id) %in% unique(studies$study_id)),
   all(unique(conditions$population_id) %in% unique(studies$population_id)),
   all(unique(outcomes$population_id) %in% unique(studies$population_id)),
@@ -146,6 +146,8 @@ precision_specs <- data.frame(
   source = c("Gibbs 2014 Table 2", "Gibbs 2014 Table 2", "Haldar 2020 Table 2", "Haldar 2020 Table 2", "Nakamura 2021 Figure 3B", "Sulaimani 2025 Figure 3B", "Sulaimani 2025 Figure 3B"),
   stringsAsFactors = FALSE
 )
+precision_specs <- subset(precision_specs, study_id != "Sulaimani_2025")
+precision_specs$source[precision_specs$study_id == "Gibbs_2014"] <- "Gibbs 2014, PDF p4, Figure 2 numeric labels and Results"
 precision_rows <- lapply(seq_len(nrow(precision_specs)), function(i) {
   x <- precision_specs[i, ]
   if (x$p_relation == "=") {
@@ -185,6 +187,18 @@ enomoto_author_rows <- data.frame(
   stringsAsFactors = FALSE
 )
 paired_precision_recovery <- rbind(paired_precision_recovery, enomoto_author_rows)
+sulaimani_paired <- subset(outcomes, study_id == "Sulaimani_2025" & metric == "glucose iAUC paired difference")
+for (i in seq_len(nrow(sulaimani_paired))) {
+  x <- sulaimani_paired[i, ]
+  new <- paired_precision_recovery[1, ]; new[1, ] <- NA
+  new$study_id <- x$study_id; new$comparison <- paste(x$modifier, "rice: evening minus morning")
+  new$n <- x$n; new$mean_difference <- x$value
+  new$data_status <- "derived from author-provided paired values"; new$source <- x$source_provenance
+  new$precision_type <- "exact paired SE calculated from author-provided values"
+  new$paired_se_or_upper_bound <- x$dispersion_value / sqrt(x$n)
+  new$conservative_ci_low <- x$ci_low; new$conservative_ci_high <- x$ci_high
+  paired_precision_recovery <- rbind(paired_precision_recovery, new)
+}
 paired_precision_recovery[c("paired_se_or_upper_bound", "conservative_ci_low", "conservative_ci_high")] <-
   lapply(paired_precision_recovery[c("paired_se_or_upper_bound", "conservative_ci_low", "conservative_ci_high")], round, 4)
 write.csv(paired_precision_recovery, file.path(table_dir, "paired_precision_recovery.csv"), row.names = FALSE, na = "")
@@ -222,6 +236,11 @@ precision_availability <- data.frame(
   stringsAsFactors = FALSE
 )
 precision_availability <- subset(precision_availability, study_id %in% studies$study_id)
+precision_availability$remaining_limitation[precision_availability$study_id == "Bo_2015"] <- "Published condition means/SDs in companion report; retain AUC unit caveat and adjusted primary contrast"
+for (sid in c("Garaulet_2022", "Sulaimani_2025")) {
+  precision_availability$precision_availability_class[precision_availability$study_id == sid] <- "direct/recoverable paired precision"
+  precision_availability$remaining_limitation[precision_availability$study_id == sid] <- if (sid == "Sulaimani_2025") "Glucose iAUC author data complete; other insulin/peak values remain graph-digitized except the reported morning GTE insulin peak; AUC unit inferred from report" else "Published paired AUC differences/SDs available; overall and genotype strata must not be double-counted"
+}
 precision_availability <- rbind(precision_availability, data.frame(study_id="Lu_2022", precision_availability_class="narrative capillary contrast; paired precision unavailable", remaining_limitation="Capillary AUC window unclear; long CGM window overlaps dinner. No precision imputed."))
 stopifnot(setequal(precision_availability$study_id, unique(studies$study_id)))
 write.csv(precision_availability, file.path(table_dir, "study_precision_availability.csv"), row.names = FALSE)
@@ -286,7 +305,7 @@ comparison_groups <- data.frame(
   stringsAsFactors = FALSE
 )
 lu_group <- comparison_groups[1,]
-lu_group[1,] <- list("LUNCH_LU", "supportive block", NA, "No-preload lunch at 14:00 versus 12:00", "Lu_2022", 1, 26, "Capillary n=20; AUC window unresolved; 270-min CGM includes next dinner in late condition", "Narrative only; no pooled estimate or imputed precision")
+lu_group[1,] <- list("LUNCH_LU", "supportive block", NA, "No-preload lunch at 14:00 versus 12:00", "Lu_2022", 1, 26, "Capillary n=20; AUC window unresolved; 270-min CGM includes next dinner in late condition", "Descriptive digitized estimates; no pooled estimate or imputed precision")
 comparison_groups <- rbind(comparison_groups, lu_group)
 write.csv(comparison_groups, file.path(table_dir, "comparison_groups.csv"), row.names = FALSE)
 
@@ -298,17 +317,19 @@ effect_representation_audit <- data.frame(
   primary_auc_construct = c("reported glucose AUC, 180 min", "incremental AUC, 120 min", "incremental AUC, 180 min", "total AUC, 180 min", "incremental AUC, 120 min", "incremental AUC, 180 min", "AUC above baseline, 150 min", "incremental AUC, 180 min", "total AUC, 120 min", "incremental AUC, 180 min"),
   raw_mean_difference = c("available as adjusted contrast", "available for GI-specific comparisons", "available for GI-specific comparisons", "available from condition means", "available as chronotype-specific model contrasts", "available from graph-derived condition means", "available with exact paired precision", "author-provided for Days 1–4", "available with exact paired precision", "available from graph-derived condition means"),
   paired_precision = c("reported CI", "exact/bounded from reported p by GI", "bounded from p<0.0001 by GI", "missing", "reported CI by chronotype", "bounded from p<0.01 by treatment", "exact from p=0.002", "author-provided paired SD/SE/CI", "exact from p=0.004", "bounded from p<0.001 for dinner"),
-  log_ratio_of_means = c("not computable: condition means absent", "computable", "computable", "computable", "computable", "computable from graph-derived means", "computable", "computable", "computable", "computable from graph-derived means"),
+  log_ratio_of_means = c("computable from companion-report condition means", "computable", "computable", "computable", "computable", "computable from author-provided means", "computable", "computable", "computable", "computable from graph-derived means"),
   scientific_compatibility_issue = c("AUC definition and printed units uncertain", "incremental plasma AUC and unequal fasting durations", "incremental plasma AUC with GI factorial structure", "total AUC with meal/sleep factorial structure", "CGM incremental AUC with chronotype strata", "incremental plasma AUC with GTE factorial structure", "above-baseline lunch AUC", "CGM incremental dinner AUC across repeated days", "total dinner AUC", "CGM incremental dinner AUC from figure"),
   family_wide_role = "structured display; nested-stratum estimate only when compatible",
   stringsAsFactors = FALSE
 )
+effect_representation_audit$raw_mean_difference[effect_representation_audit$study_id == "Sulaimani_2025"] <- "available from author-provided paired data"
+effect_representation_audit$paired_precision[effect_representation_audit$study_id == "Sulaimani_2025"] <- "exact paired SD/SE/CI calculated from author-provided data"
 write.csv(effect_representation_audit, file.path(table_dir, "effect_representation_audit.csv"), row.names = FALSE, na = "")
 
 pooling_compatibility <- data.frame(
   family = c("F1", "F2"),
   k = c(6, 4),
-  common_effect_computable_for_all = c("No: Bo lacks condition means for a log ratio; paired standardized effects remain covariance/design dependent", "Technically for log ratios, but not for a scientifically common AUC construct"),
+  common_effect_computable_for_all = c("Condition mean ratios computable; paired standardized effects remain covariance/design dependent", "Technically for log ratios, but not for a scientifically common AUC construct"),
   construct_compatibility = c("Fail: total/reported AUC and incremental AUC, plasma and CGM, and factorial modifiers are mixed", "Fail: total AUC, above-baseline AUC, and incremental AUC are not interchangeable proportional constructs"),
   precision_compatibility = c("Fail for an omnibus effect: several overall paired/model precisions remain unavailable", "Fail for an omnibus effect: family-wide estimates still mix direct, exact, and bounded precision; the Enomoto–Nakamura nested stratum is now estimable"),
   decision = c("No daypart family-wide pooled estimate; report studies individually", "No delayed-meal family-wide pooled estimate; pool only the compatible Enomoto–Nakamura comparison"),
@@ -408,7 +429,7 @@ comparison_specs <- data.frame(
   ),
   stringsAsFactors = FALSE
 )
-comparison_specs <- subset(comparison_specs, study_id %in% studies$study_id)
+comparison_specs <- subset(comparison_specs, study_id %in% studies$study_id & study_id != "Sulaimani_2025")
 
 
 get_condition_row <- function(spec, condition_id) {

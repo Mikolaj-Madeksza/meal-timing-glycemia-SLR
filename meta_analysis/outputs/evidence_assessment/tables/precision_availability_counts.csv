@@ -1,8 +1,7 @@
 "precision_availability_class","n_studies"
 "condition summaries; covariance/model precision missing",3
-"direct/recoverable paired precision",6
-"figure-derived summaries; covariance missing",1
+"direct/recoverable paired precision",8
 "narrative capillary contrast; paired precision unavailable",1
 "reported contrast without usable precision",1
-"reported p-value precision recovered or bounded",4
+"reported p-value precision recovered or bounded",3
 "timed means; AUC contrast precision unavailable",1
