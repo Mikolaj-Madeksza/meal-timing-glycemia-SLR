@@ -15,5 +15,3 @@ The Enomoto author-supplied file contains aggregate paired-test statistics only.
 Risk-of-bias counts and the highest core-item judgment per study are calculated from Assessments. The highest core-item judgment is a review-defined summary, not an overall judgment supplied by ROBUST-RCT. Optional item 7 is excluded from that calculation. Textual design considerations are explanatory annotations. See [risk-of-bias methods](risk_of_bias.md).
 
 Software and documentation are provided under the existing [MIT license](LICENSE).
-
-Eligibility correction (9 September 2026): Saad 2012 and Yadav 2023 were removed because only labelled-meal assessment order was randomized. Lu 2022 contributes the randomized no-preload lunch-delay comparison. Lu's outcome-window and capillary missing-data limitations are retained in the extraction and risk-of-bias evidence. The two-study delayed-dinner meta-analysis is unchanged.
